@@ -1,0 +1,36 @@
+.page-template-about-me{
+    #content{
+        padding-top:100px;
+        h1{
+            margin:50px 0 100px;
+            font-family:'ChronicleDisplay-Roman', arial;
+        }
+        .home-image-1{
+            float: left;
+            margin-bottom: 15px;
+            margin-left: 0px;
+            position: relative;
+            width: 200px;
+            .svg-triangle-big{
+                display: block;
+                height: 175px;
+                margin: 0 auto 0;
+                width: 200px;
+            }
+        }
+        h2{
+            font-size: 200%;
+            margin-top: 65px;
+            transform: rotate(-22deg);
+        }
+        p{ 
+            text-align:justify;
+            clear:left;
+            strong{
+                color:$orange;
+                font-size:130%;
+                font-weight:normal;
+            }
+        }
+    }
+}

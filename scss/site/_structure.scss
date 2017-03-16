@@ -1,0 +1,453 @@
+/*
+A. CUSTOM SETTINGS
+1. TYPOGRAPHY
+2. HEADER
+3. NAVIGATION
+4. SLIDERS
+5. FOOTER 
+6. COPYRIGHT
+7. PAGE SPECIFIC
+    7.1 HOME
+    7.2 ABOUT ME
+    7.3 PHOTOGRAPHY
+    7.4 INVESTMENT
+    7.5 GIF BOOTH
+8. PARTS
+    8.1 GET IN TOUCH CTA
+    8.2 SOCIAL
+9. BLOG
+    10.1 BLOG SINGLE
+    10.2 BLOG ARCHIVE
+10. GET IN TOUCH
+11. PLUGINS
+12. HOVER EFFECTS
+13. COMMON STYLE / BORDERS
+*/
+/**
+ * 
+ * A. CUSTOM SETTINGS
+ * ----------------------------------------------------------------------------
+ */
+
+a:hover {
+    cursor: pointer;
+}
+html, body {
+    height:auto!important;
+    overflow-x: hidden;
+}
+body {
+    overflow-y: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+}
+.left {
+    float: left !important;
+}
+.right {
+    float: right !important;
+}
+.antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#wpadminbar {
+    position: fixed !important;
+}
+[class*="column"] + [class*="column"]:last-child {
+    float:left;
+}
+.medium-centered{
+    float:left!important;
+}
+.os-animation {
+    -vendor-animation-duration: 3s;
+    -vendor-animation-delay: 2s;
+    -vendor-animation-iteration-count: infinite;
+}
+.PadLeft30{
+    padding-left:30px;
+}
+.PadRight200{
+    padding-right:200px;
+}
+.PadRight30{
+    padding-right:30px;
+}
+a.button{
+    display:block;
+    font-family:'Gotham-Book';
+    text-transform:uppercase;
+    border:none;
+    position:relative;
+    transition:all 0.5s ease-in-out 0s;
+    padding:20px 0;
+    float:right;
+    font-size:130%;
+    letter-spacing:1px;
+    span{
+        position:absolute;
+        top:5px;
+        left:5px;
+        right:5px;
+        bottom:5px;
+        border:1px solid $white;
+    }
+}
+a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
+    background:$orange;
+}
+/**
+ * 1. TYPOGRAPHY
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 2. HEADER
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 3. NAVIGATION
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 4. SLIDERS
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * 5. FOOTER 
+ * ------------------------------------
+ */
+
+/**
+ * 6. COPYRIGHT
+ * ------------------------------------
+ */
+
+/** 7. PAGE SPECIFIC
+ * ------------------------------------ */
+
+/**
+ *  7.1 HOME
+ * ------------------------------------
+ */
+.parallax {
+    position:absolute;
+    max-width:100px;
+    min-width: 250px;
+    z-index: -9999;
+    img {
+        max-width: 100%;
+        width:100%;
+        height:auto;
+
+    }
+}
+
+
+/**
+ *  7.2 ABOUT ME
+ * ------------------------------------
+ */
+
+/**
+ *  7.3 PHOTOGRAPHY
+ * ------------------------------------
+ */
+
+/**
+ *  7.4 INVESTMENT
+ * ------------------------------------
+ */
+
+/**
+ *  7.5 GIF BOOTH
+ * ------------------------------------
+ */
+
+
+/** 8. PARTS
+ * ------------------------------------ */
+
+/**
+ *  8.1 GET IN TOUCH CTA
+ * ------------------------------------
+ */
+
+#cta{
+    position:relative;
+    margin:100px 0;
+    #cta-wrap{
+        background:$turquoise;
+        text-align:center;
+        position:relative;
+        padding:50px 125px 55px;
+        p{
+            text-align:center;
+        }
+        h3{
+            margin-bottom:30px;
+        }
+        a.button{
+            color:$darkblue;
+            transition:all 0.5s ease-in-out 0s;
+            display:block;
+            float:none;
+            margin:35px auto 0;
+            padding:35px 0;
+            line-height:58px;
+            background:$white;
+            max-width:225px;
+            span{
+                border:1px solid $turquoise;
+            }
+        }
+        a.button:hover{
+            background:$orange;
+        }
+        .white-bdr{
+            position:absolute;
+            top:20px;
+            bottom:20px;
+            left:20px;
+            right:20px;
+            border:2px solid $white;
+        }
+        img{
+            position:absolute;
+        }
+        img.left{
+            left:50px;
+            top:50px;
+            width:65px;
+        }
+        img.right{
+            right:50px;
+            bottom:50px;
+            width:90px;
+        }
+    }
+}
+/**
+ *  8.2 SOCIAL
+ * ------------------------------------
+ */
+.social-icons{
+    ul.social{
+        position:relative;
+        display:block;
+        text-align:center;
+        margin: 0;
+        li {
+            float:none;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-size:105%;
+            a {
+                display:block;
+                i {
+                    display: block;
+                    width:25px;
+                    height:25px;
+                    line-height:25px;
+                    color:$white;
+                    transition: all 0.5s ease-in-out 0s;
+                }
+            }
+            a {
+                i.fa-instagram{
+                    background:$white;
+                    border-radius:50%;
+                    color:$darkblue;
+                }
+            }
+            a:hover{
+                background:$darkblue;
+                i{
+                    color:$orange;;
+                }
+                i.fa-instagram{
+                    background:$orange;
+                    color:$darkblue;
+                }
+            }
+        }
+    }
+}
+/**
+ *  9. BLOG
+ * ------------------------------------
+ */
+
+/**
+ *  9.1 BLOG SINGLE
+ * ------------------------------------
+ */
+
+/**
+ *  9.2 BLOG ARCHIVE
+ * ------------------------------------
+ */
+
+/**
+ *  10. GET IN TOUCH
+ * ------------------------------------
+ */
+
+/**
+ * 11. PLUGINS
+ * ------------------------------------
+ */
+
+/**
+ * 12. HOVER EFFECTS
+ * ------------------------------------
+ */
+.grid {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+/* Common style */
+.grid figure {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+.grid figure .figwrap {
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding:0 45px;
+}
+.grid figure img {
+    position: relative;
+    display: block;
+    height: auto;
+    max-width: 100%;
+    opacity: 1;
+}
+.grid figure figcaption {
+    padding: 2em;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+    pointer-events: none;
+}
+.grid figure figcaption,
+.grid figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.grid figure figcaption {
+    padding:20px;
+}
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+/*---------------*/
+/***** Fade *****/
+/*---------------*/
+figure.effect-ste {
+    img {
+        opacity:1;
+        -webkit-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+    }
+}
+figure.effect-ste:hover {
+    img {
+        opacity:0.7;
+        -webkit-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+    }
+}
+.figwrap{   
+    left:0;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:100%;
+    padding:0 30px;
+}
+figure.effect-framed img {
+    background:none;
+    opacity: 1;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+figure.effect-framed figcaption::before, figure.effect-framed figcaption::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    opacity:0;
+    content: '';
+}
+figure.effect-framed figcaption::before {
+    background:none;
+    -moz-transition:all 0.35s ease-in-out 0s;
+    transition:all 0.35s ease-in-out 0s;
+    -webkit-transition:all 0.35s ease-in-out 0s    
+}
+
+figure.effect-framed figcaption h2 {
+    font-size:120%;
+    line-height:28px;
+    display:block;
+    background:none;
+    position:relative;
+    color:$grey;
+    font-family: 'MrsEavesRoman-Regular';
+    text-align:center;
+    height:100%;
+    text-transform: capitalize;
+    opacity: 0;
+    -moz-transition:all 0.35s ease-in-out 0s;
+    transition:all 0.35s ease-in-out 0s;
+    -webkit-transition:all 0.35s ease-in-out 0s 
+}
+figure.effect-framed:hover figcaption::before {
+    background:$white;
+    opacity:0.7;
+    -moz-transition:all 0.35s ease-in-out 0s;
+    transition:all 0.35s ease-in-out 0s;
+    -webkit-transition:all 0.35s ease-in-out 0s;
+}
+figure.effect-framed:hover figcaption h2 {
+    opacity: 1;
+}
+/**
+ * 13. COMMON STYLE / BORDERS
+ * ------------------------------------
+*/

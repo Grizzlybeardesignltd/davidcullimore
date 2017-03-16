@@ -1,0 +1,231 @@
+/*
+A. CUSTOM SETTINGS
+1. TYPOGRAPHY
+2. HEADER
+3. NAVIGATION
+4. SLIDERS
+5. FOOTER 
+6. COPYRIGHT
+7. PAGE SPECIFIC
+    7.1 HOME
+    7.2 ABOUT ME
+    7.3 PHOTOGRAPHY
+    7.4 INVESTMENT
+    7.5 GIF BOOTH
+8. PARTS
+    8.1 GET IN TOUCH CTA
+    8.2 SOCIAL
+9. BLOG
+    10.1 BLOG SINGLE
+    10.2 BLOG ARCHIVE
+10. GET IN TOUCH
+11. PLUGINS
+12. HOVER EFFECTS
+13. COMMON STYLE / BORDERS
+*/
+@media screen and (max-width: 40em) {
+    /**
+     * 
+     * A. CUSTOM SETTINGS
+     * ----------------------------------------------------------------------------
+     */
+    a.button{
+        font-size:110%;
+    }
+    /**
+     * 1. TYPOGRAPHY
+     * ----------------------------------------------------------------------------
+     */
+    p {
+        font-size:75%;
+    }
+    h1{
+        font-size:150%;
+    }
+    h2, h3{
+        font-size: 135%;
+    }
+    /**
+     * 2. HEADER
+     * ----------------------------------------------------------------------------
+     */
+    /**
+     * 3. NAVIGATION
+     * ----------------------------------------------------------------------------
+     */
+    /**
+     * 4. SLIDERS
+     * ----------------------------------------------------------------------------
+     */
+
+    /**
+     * 5. FOOTER 
+     * ------------------------------------
+     */
+    footer#footer{
+        .footer-wrapper{
+            margin-top:-70px;
+        }
+    }  
+    /**
+     * 6. COPYRIGHT
+     * ------------------------------------
+     */
+
+    /** 7. PAGE SPECIFIC
+     * ------------------------------------ */
+
+    /**
+     *  7.1 HOME
+     * ------------------------------------
+     */
+    .parallax {
+        position:absolute;
+        max-width:100px;
+        min-width: 250px;
+        z-index: -9999;
+    }
+    .page-template-home{
+        #pagewrap{
+            #content{
+                padding:60px 0 80px;
+                .overlay-bg{
+                    top:-30px;
+                }
+                #intro{
+                    .wrap{
+                        a.button{
+                            float:none;
+                            margin-right:0;
+                        }
+                    }
+                }
+            }
+            #portfolio{
+                #family, #weddings{
+                    .home-family, .home-weddings{
+                        p{
+                        }
+                    }
+                }
+            }
+            #cta{
+                margin: 0 0 60px;
+                padding-top:110px;
+                .overlay-bg{
+                    top:50px;
+                }
+            }
+        }
+    }
+    /**
+     *  7.2 ABOUT ME
+     * ------------------------------------
+     */
+
+    /**
+     *  7.3 PHOTOGRAPHY
+     * ------------------------------------
+     */
+
+    /**
+     *  7.4 INVESTMENT
+     * ------------------------------------
+     */
+
+    /**
+     *  7.5 GIF BOOTH
+     * ------------------------------------
+     */
+
+    /** 8. PARTS
+    * ------------------------------------ */
+
+    /**
+     *  8.1 GET IN TOUCH CTA
+     * ------------------------------------
+     */
+    #cta{
+        #cta-wrap{
+            padding:45px;
+            img.left, img.right{
+                display:none;
+            }
+            h3{
+                margin-bottom:15px;
+            }
+            a.button{
+                margin-top:30px;
+                padding:30px 0;
+                line-height:48px;
+            }
+        }
+    }
+    /**
+    *  8.2 SOCIAL
+    * ------------------------------------
+    */
+
+    /**
+     *  9. BLOG
+     * ------------------------------------
+     */
+
+    /**
+     *  9.1 BLOG SINGLE
+     * ------------------------------------
+     */
+
+    /**
+     *  9.2 BLOG ARCHIVE
+     * ------------------------------------
+     */
+
+    /**
+     *  10. GET IN TOUCH
+     * ------------------------------------
+     */
+
+    /**
+     * 11. PLUGINS
+     * ------------------------------------
+     */
+
+    /**
+     * 12. HOVER EFFECTS
+     * ------------------------------------
+     */
+
+    /**
+     * 14. COMMON STYLE / BORDERS
+     * ------------------------------------
+    */
+}
+@media screen and (max-width: 35.043em) {
+    footer#footer{
+        .footer-wrapper{
+            margin-top:-60px;
+        }
+    }  
+}
+@media screen and (max-width: 30.043em) {
+    footer#footer{
+        .footer-wrapper{
+            margin-top:-50px;
+        }
+    }  
+}
+@media screen and (max-width: 25.043em) {
+    footer#footer{
+        .footer-wrapper{
+            margin-top:-40px;
+        }
+    }  
+}
+@media screen and (max-width: 20.043em) {
+    footer#footer{
+        .footer-wrapper{
+            margin-top:-20px;
+        }
+    }  
+}

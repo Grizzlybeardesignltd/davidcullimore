@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'ChronicleDisplay-Bold';
+    src: url('../fonts/ChronicleDisplay-Bold.eot');
+    src: url('../fonts/ChronicleDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ChronicleDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/ChronicleDisplay-Bold.woff') format('woff'),
+        url('../fonts/ChronicleDisplay-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChronicleDisplay-Roman';
+    src: url('../fonts/ChronicleDisplay-Roman.eot');
+    src: url('../fonts/ChronicleDisplay-Roman.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ChronicleDisplay-Roman.woff2') format('woff2'),
+        url('../fonts/ChronicleDisplay-Roman.woff') format('woff'),
+        url('../fonts/ChronicleDisplay-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham-Book';
+    src: url('../fonts/Gotham-Book.eot');
+    src: url('../fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Gotham-Book.woff2') format('woff2'),
+        url('../fonts/Gotham-Book.woff') format('woff'),
+        url('../fonts/Gotham-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Gotham-Book', Arial, sans-serif;    
+    font-size: 100%;
+    color:$grey;
+}
+h1, h2, h3, h3.blog, h4, h5, h6{
+    font-family: 'ChronicleDisplay-Bold', Arial, sans-serif;
+}
+h1{
+    font-size:170%; 
+    text-transform:capitalise;
+    color:$darkblue;
+    text-align:center
+}
+h2, h3{
+    font-size:170%;
+    color:$darkblue;
+    margin-bottom:20px;
+}
+a {
+    text-decoration: none;
+    transition:all 0.5s ease-in-out 0s;
+    color:$orange;
+}
+p a {
+    color:$orange;
+    font-family: 'Gotham-Book', serif;
+    transition:all 0.5s ease-in-out 0s;
+}
+p a:hover{
+    color:$darkblue;
+}
+a:hover {
+    text-decoration: none;
+}
+p {
+    color:$darkblue;
+    font-family: 'Gotham-Book', 'Times New Roman', serif;
+    margin-bottom:15px;
+    font-size:90%;
+    line-height: 26px;
+    text-align:left;
+}
+.orange-bg {background:$orange;}
+.darkblue-bg {background:$darkblue;}
+.turquoise-bg {background:$turquoise;}
+.grey-bg {background:$grey;}
+.white-bg {background:$white};
+.orange {color:$orange;}
+.darkblue {color:$darkblue;}
+.turquoise {color:$turquoise;}
+.grey {color:$grey;}

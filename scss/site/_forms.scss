@@ -1,0 +1,175 @@
+form{
+    p, #content li{
+        line-height:0!important;
+    }
+}
+body .gform_wrapper ul li.gfield{
+    margin:0!important;
+}
+.gform_wrapper ul.gform_fields li.gfield {
+    line-height: 0 !important;
+}
+
+body .gform_wrapper .top_label div.ginput_container{
+    margin:0!important;
+}
+input[type="email"], input[type="text"], input[type="button"], textarea{
+    font-family: 'Gotham-Book', "Times New Roman", sans-serif!important;
+    background:#DFF5F4!important;
+    box-shadow:none;
+    width:100%;
+    border:none;
+    color:$black;
+    margin-bottom:25px;
+    padding:20px!important;
+    transition: all 0.5s ease-in-out 0s;
+}
+textarea.large, textarea.medium, textarea.small{
+    margin:0!important;
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
+    color:$darkblue;
+    background:$white;
+    font-size:120%;
+    text-transform:none;
+}
+/* gform placeholders*/
+::-webkit-input-placeholder { color:$black;   
+                              text-transform:uppercase; }
+:-moz-placeholder { opacity: 1; color:$black;   
+                    text-transform:uppercase; } /* Firefox 18- */
+::-moz-placeholder { opacity: 1; color:$black;   
+                     text-transform:uppercase; } /* firefox 19+ */
+:-ms-input-placeholder { color:$black;    
+                         text-transform:uppercase;} /* ie */
+input:-moz-placeholder { color:$black;    
+                         text-transform:uppercase;}
+.gform_wrapper {
+    position:relative;
+    margin:0!important;
+    z-index:10;
+    padding:10px;
+    background:$turquoise;
+    form {
+        border:2px solid $white;
+        padding:50px 50px 40px;
+        fieldset.enquiry{
+            margin-bottom:0px;
+            padding-bottom:4px;
+            ul.top_label{
+                li{
+                    text-align:right;
+                    position:relative;
+                }
+                .ginput_container_select{
+                    select{
+
+                    }
+                }
+            }
+        }
+        .gform_heading {
+            margin:0;
+        }
+        span.gform_description {
+            display:none!important;
+        }
+        ul.gform_fields{
+            li.gfield{
+                padding-right:0;
+            }
+        }
+        fieldset.left-col{
+            float: left;
+            margin-right: 2%;
+            width: 49%;
+            ul{
+                li{
+                    padding-right:0!important;
+                }
+            }
+        }
+        fieldset.right-col{
+            clear: none;
+            float: right;
+            margin-right: 0;
+            width: 49%;
+            ul{
+                margin-left:0!important;
+                li{
+                    padding-right:0!important;
+                }
+            }
+        }
+        fieldset.medium-6:first-of-type {
+            padding-left: 0;
+
+            li {
+            }
+        }
+        fieldset.medium-6:last-of-type {
+            padding-right: 0;
+        }
+        .gfieldset {
+            ul {
+                margin:0;
+                li {
+                    margin:0!important;
+                    textarea.large {
+                        height:130px!important;
+                    }
+                }
+
+            }
+        }
+        .gform_footer{
+            overflow:hidden;
+            padding-top: 40px!important;
+            padding-bottom:0;
+            margin:0;
+            text-align:center;
+            button{
+                display:inline-block;
+                font-family:'ChronicleDisplay-Bold';
+                color:$darkblue;
+                text-transform:uppercase;
+                width:180px;
+                height:60px;
+                border:none;
+                position:relative;
+                transition:all 0.5s ease-in-out 0s;
+                padding:1.25rem 2.5rem!important;
+                float:none;
+                font-size:110%;
+                background:$white;
+                margin:0!important;
+                span{
+                    position:absolute;
+                    top:5px;
+                    left:5px;
+                    right:5px;
+                    bottom:5px;
+                    border:1px solid $turquoise;
+                }
+            }
+            .button:hover{
+                background:$orange;
+            }
+        }
+        textarea.large{
+            height:240px
+        }
+    }
+}
+
+.gform_wrapper .top_label input.small, .gform_wrapper .top_label select.small {
+    padding: 7.5px 0!important;
+    width: 19.5%!important;
+}
+.field-right {
+    padding-right: 0!important;
+
+    li {
+        padding-right: 0!important;
+    }
+}
