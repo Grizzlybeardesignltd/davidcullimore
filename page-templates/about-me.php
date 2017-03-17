@@ -4,22 +4,9 @@
  */
 get_header();
 ?>
-<section id="slider">
-    <div class="flexslider">
-        <ul class="slides">
-            <?php
-            $images = get_field('gallery_images');
-            if ($images):
-                ?>
-                <?php foreach ($images as $image): ?>
-                    <li>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                    </li>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </ul>
-    </div>
-</section>
+
+<?php echo get_template_part('parts/content', 'banner'); ?>
+
 <section id="content" class="os-animation animated fadeIn">
     <?php while (have_posts()) : the_post(); ?>
         <div class="row">

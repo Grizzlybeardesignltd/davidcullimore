@@ -38,6 +38,7 @@ html, body {
 }
 body {
     overflow-y: hidden;
+    background: transparent;
 }
 img {
     max-width: 100%;
@@ -102,6 +103,13 @@ a.button{
 a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
     background:$orange;
 }
+.pxforward {
+    position: relative;
+    z-index: 99;
+}
+.bg-white {
+    background: $white;
+}
 /**
  * 1. TYPOGRAPHY
  * ----------------------------------------------------------------------------
@@ -111,6 +119,12 @@ a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
  * 2. HEADER
  * ----------------------------------------------------------------------------
  */
+.banner {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
 
 /**
  * 3. NAVIGATION
@@ -121,6 +135,102 @@ a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
  * 4. SLIDERS
  * ----------------------------------------------------------------------------
  */
+#slider {
+    position: relative;
+    .svg-cont {
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+        bottom: -3px;
+    }
+    .flexslider {
+        .slides {
+            height: 100vh;
+            li {
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+        a.scrollDown {
+            padding-top: 80px;
+            position: absolute;
+            z-index: 999;
+            display: inline-block;
+            transition: all 0.5s ease-in-out 0s;
+            bottom: 20px;
+            
+            span {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-animation: sdb07 2s infinite;
+                animation: sdb07 2s infinite;
+                opacity: 0;
+                box-sizing: border-box;
+                
+                &:nth-of-type(1) {
+                    -webkit-animation-delay: 0s;
+                    animation-delay: 0s;
+                }
+                &:nth-of-type(2) {
+                    -webkit-animation-delay: .15s;
+                    animation-delay: .15s;
+                    top: 16px;
+                }
+                &:nth-of-type(3) {
+                    -webkit-animation-delay: .3s;
+                    animation-delay: .3s;
+                    top: 32px;
+                }
+            }
+            &:hover {
+                span {
+                    &:nth-of-type(1) {
+                        border-color: $orange;
+                    }
+                    &:nth-of-type(2) {
+                        border-color: $turquoise;
+                    }
+                    &:nth-of-type(3) {
+                        border-color: $darkblue;
+                    }
+                }
+            }
+        }
+        @-webkit-keyframes sdb07 {
+                0% {
+                        opacity: 0;
+                }
+                50% {
+                        opacity: 1;
+                }
+                100% {
+                        opacity: 0;
+                }
+        }
+        @keyframes sdb07 {
+                0% {
+                        opacity: 0;
+                }
+                50% {
+                        opacity: 1;
+                }
+                100% {
+                        opacity: 0;
+                }
+        }
+
+    }
+}
 
 /**
  * 5. FOOTER 
@@ -451,3 +561,22 @@ figure.effect-framed:hover figcaption h2 {
  * 13. COMMON STYLE / BORDERS
  * ------------------------------------
 */
+
+.logo-anim {
+    height: 300px;
+    width: 746px;
+    display: block;
+    background: url('../img/logo-anim.png') cover no-repeat center 0;
+    background-position: 0px 0px;
+    animation: animatedBackground 10s linear infinite;
+    -moz-animation: animatedBackground 10s linear infinite;
+    -webkit-animation: animatedBackground 10s linear infinite;
+    -ms-animation: animatedBackground 10s linear infinite;
+    -o-animation: animatedBackground 10s linear infinite;
+}
+@keyframes animatedBackground {
+     0% { background-position: 0 0; }
+     25% { background-position: -1000px 0; }
+     50% { background-position: -2000px 0; }
+    100% { background-position: -6000px 0; }
+}

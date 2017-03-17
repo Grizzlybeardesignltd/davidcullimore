@@ -28,15 +28,22 @@
         <?php wp_head(); ?>
     </head>   
     <body <?php body_class('antialiased'); ?>>
-        <header id="header">
+        <?php if (is_front_page() ) {
+            $class = 'menu-default-hide';
+        }?>
+        <header id="header" class="<?php echo $class;?>">
             <!-- Starting the Top-Bar -->
-            <div class="row container nav-container">
+            <div id="header-inn" class="row container nav-container">
                 <div class="large-12 columns">
                     <nav id="primary-navigation" class="site-navigation clearfix" role="navigation">
                         <div class="hide-for-medium-down">
                             <div id="header-logo">
-                                <a href='<?php echo get_bloginfo('url'); ?>'><img src='<?php echo get_template_directory_uri(); ?>/img/svg/logo.svg' alt="David Cullimore Photography"></a>
+                                <a href='<?php echo get_bloginfo('url'); ?>'>
+                                    <img id="logo-triangle" src='<?php echo get_template_directory_uri(); ?>/img/svg/logo.svg' alt="David Cullimore Photography">
+                                    <img id="logo-text" src='<?php echo get_template_directory_uri(); ?>/img/svg/logo-text.svg' alt="David Cullimore Photography">
+                                </a>
                             </div>
+                            <div id="header-inn-main">
                             <?php
                             wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu', 'walker' => new reverie_walker(array(
                                     'in_top_bar' => false,
@@ -44,6 +51,7 @@
                                     'menu_type' => 'main-menu'
                                         )),));
                             ?>
+                            </div>
                         </div>
                         <div class="navbar-header hide-for-large-up">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -75,5 +83,6 @@
                     </nav>
                 </div>
             </div>
+            <div class="header-bg"></div>
             <!-- End of Top-Bar -->
         </header>

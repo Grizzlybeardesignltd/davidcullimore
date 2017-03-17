@@ -16,20 +16,46 @@ get_header();
         </div>
     </div>
 </section>
+<div class="logo-anim">
+    
+</div>
 <section id="gallery">
     <div class="row">
-        <div class="large-12 columns">
+        
             <?php
             $images = get_field('gallery_images');
             if ($images):
-                ?>
-        <?php foreach ($images as $image): ?>
-                    <li>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                    </li>
-                <?php endforeach; ?>
+                $i = 1;
+                $b = 1;    
+                foreach ($images as $image): 
+                    if ($i < 3 && $b == 1) {
+                        echo '<div class="medium-6 columns">'
+                        . '<img src="' . $image["sizes"]["large"] . '" alt="' .  $image["alt"] . '" />';
+                        if ($i == 2) {
+                            $b = 2;
+                            $i = 1;
+                        } else {
+                            $i++;
+                        }
+                    } elseif ($i < 4 && $b == 2) {
+                        echo '<div class="medium-4 columns">'
+                        . '<img src="' . $image["sizes"]["medium"] . '" alt="' .  $image["alt"] . '" />';
+                        if ($i == 3) {
+                            $b = 1;
+                            $i = 1;
+                        } else {
+                            $i++;
+                        }
+                    }
+                    ?>
+
+                    </div>
+                <?php if ($i == 1){
+                     echo '</div><div class="row">';
+                } 
+                endforeach; ?>
         <?php endif; ?>
-        </div>
+        
     </div>
 </section>
 <?php get_footer(); ?>

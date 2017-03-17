@@ -1,7 +1,8 @@
 header#header {
+    z-index: 999;
     background:$white;
-    border-bottom:4px solid $darkblue;
-    padding:20px 0;
+    width: 100%;
+    padding: 17px 0 0;
     .nav-container{
         position:relative;
         width:100%;
@@ -17,9 +18,31 @@ header#header {
                 float:left;
                 img {
                     max-width:70px;
+                    transition: all 0.5s ease-in-out 0s;
+                    position: absolute;
+                    left: -100px;
+                    &#logo-triangle {
+                        opacity: 0;
+                    }
+                    &#logo-text {
+                        max-width: 200px;
+                        top: 0px;
+                        -webkit-animation:logoTop 1s ease normal both ; 
+                        -moz-animation:logoTop 1s ease normal both ; 
+                        animation:logoTop 1s ease normal both ; 
+                        
+                        &.topLogo {
+                            top: 0;
+                            -webkit-animation:logoTop 1s ease normal both ; 
+                        -moz-animation:logoTop 1s ease normal both ; 
+                        animation:logoTop 1s ease normal both ; 
+                        }
+                            
+                    }
                 }
             }
             .menu-main-menu-container {
+                padding-top: 5px;
                 float:right;
                 ul {
                     float:left;
@@ -606,4 +629,365 @@ BOOTSTRAP MISSING NAV STYLES
         border-color: transparent;
         outline: transparent;
     }
+}
+
+
+/* Menu hide default */
+
+#header.menu-default-hide #header-inn {
+  height: 150px;
+}
+#header.menu-default-hide.header-slide-down #header-inn  {
+  height: 80px;
+}
+
+body.page-template-home:not(.ux-mobile) #header.menu-default-hide {
+  background-color: transparent!important; top: 40px;
+  -webkit-animation:HeaderAnimationUnzip 1s ease normal both ; 
+  -moz-animation:HeaderAnimationUnzip 1s ease normal both ; 
+  animation:HeaderAnimationUnzip 1s ease normal both ; 
+}
+body.page-template-home:not(.ux-mobile) #header.menu-default-hide.header-slide-down
+/*.no-touch body.page #header.menu-default-hide:not(.header-slide-down):hover*/ {
+  -webkit-animation:HeaderAnimationZip 1s ease normal both ;
+  -moz-animation:HeaderAnimationZip 1s ease normal both ; 
+  animation:HeaderAnimationZip 1s ease normal both ; 
+}
+@-webkit-keyframes HeaderAnimationZip {
+  0%{ -webkit-transform: translateY(0); }
+  50%{ -webkit-transform: translateY(-40px); }
+  100%{ -webkit-transform: translateY(-40px); }
+}
+@-moz-keyframes HeaderAnimationZip {
+  0%{ -moz-transform: translateY(0); }
+  50%{ -moz-transform: translateY(-40px); }
+  100%{ -moz-transform: translateY(-40px); }
+}
+@keyframes HeaderAnimationZip {
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-40px); }
+  100%{ transform: translateY(-40px); }
+}
+@-webkit-keyframes HeaderAnimationUnzip {
+  0%{ -webkit-transform: translateY(-40px); }
+  50%{ -webkit-transform: translateY(-40px); }
+  100%{ -webkit-transform: translateY(0); }
+}
+@keyframes HeaderAnimationUnzip {
+  0%{ transform: translateY(-40px); }
+  50%{ transform: translateY(-40px); }
+  100%{ transform: translateY(0); }
+}
+@-moz-keyframes HeaderAnimationUnzip {
+  0%{ -moz-transform: translateY(-40px); }
+  50%{ -moz-transform: translateY(0); }
+  100%{ -moz-transform: translateY(0); }
+}
+body.page-template-home.admin-bar:not(.ux-mobile) #header.menu-default-hide {
+  -webkit-animation:adminHeaderAnimationUnzip 1s ease normal both ; 
+  -moz-animation:adminHeaderAnimationUnzip 1s ease normal both ; 
+  animation:adminHeaderAnimationUnzip 1s ease normal both ; 
+}
+body.page-template-home.admin-bar:not(.ux-mobile) #header.menu-default-hide.header-slide-down
+/*.no-touch body.page.admin-bar #header.menu-default-hide:not(.header-slide-down):hover*/ {
+  -webkit-animation:adminHeaderAnimationZip 1s ease normal both ;
+  -moz-animation:adminHeaderAnimationZip 1s ease normal both ; 
+  animation:adminHeaderAnimationZip 1s ease normal both ; 
+}
+@-webkit-keyframes adminHeaderAnimationZip {
+  0%{ -webkit-transform: translateY(0); }
+  50%{ -webkit-transform: translateY(-20px); }
+  100%{ -webkit-transform: translateY(-20px); }
+}
+@-moz-keyframes adminHeaderAnimationZip {
+  0%{ -moz-transform: translateY(0); }
+  50%{ -moz-transform: translateY(-20px); }
+  100%{ -moz-transform: translateY(-20px); }
+}
+@keyframes adminHeaderAnimationZip {
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-20px); }
+  100%{ transform: translateY(-20px); }
+}
+@-webkit-keyframes adminHeaderAnimationUnzip {
+  0%{ -webkit-transform: translateY(-20px); }
+  50%{ -webkit-transform: translateY(-20px); }
+  100%{ -webkit-transform: translateY(0); }
+}
+@keyframes adminHeaderAnimationUnzip {
+  0%{ transform: translateY(-20px); }
+  50%{ transform: translateY(-20px); }
+  100%{ transform: translateY(0); }
+}
+@-moz-keyframes adminHeaderAnimationUnzip {
+  0%{ -moz-transform: translateY(-20px); }
+  50%{ -moz-transform: translateY(0); }
+  100%{ -moz-transform: translateY(0); }
+}
+
+/* Anima - Logo*/
+body.page-template-home #header.menu-default-hide #header-logo {
+  position: absolute; 
+  left: 50%; 
+  height: 150px; 
+  line-height: 150px;
+  -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  -webkit-animation:logoAnimationUnzip 1s ease normal none ; 
+  -moz-animation:logoAnimationUnzip 1s ease normal both ; 
+  animation:logoAnimationUnzip 1s ease normal both ; 
+}
+body.page-template-home #header.menu-default-hide.header-slide-down #header-logo
+/*.no-touch body.page #header.menu-default-hide:not(.header-slide-down) #header-inn:hover #logo*/ {
+  -webkit-animation:logoAnimationZip 1s ease normal both ; 
+  -moz-animation:logoAnimationZip 1s ease normal both ; 
+  animation:logoAnimationZip 1s ease normal both ; 
+}
+@-webkit-keyframes logoAnimationZip {
+  0%{ left: 50%; }
+  50%{ left: 50%; }
+  100%{ left: 0; }
+}
+@-moz-keyframes logoAnimationZip {
+  0%{ left: 50%; }
+  50%{ left: 50%; }
+  100%{ left: 0; }
+}
+@keyframes logoAnimationZip {
+  0%{ left: 50%;}
+  50%{ left: 50%; }
+  100%{ left: 0; }
+}
+@-webkit-keyframes logoAnimationUnzip {
+  0%{ left: 0; }
+  50%{ left: 50%; }
+  100%{ left: 50%;  }
+}
+@-moz-keyframes logoAnimationUnzip {
+  0%{ left: 0;  }
+  50%{ left: 50%; }
+  100%{ left: 50%;  }
+}
+@keyframes logoAnimationUnzip {
+  0%{ left: 0; }
+  50%{ left: 50%;  }
+  100%{ left: 50%; }
+}
+/* Anima: logo a */
+body.page #header.menu-default-hide #header-logo a {
+    height: 150px; text-align: center; 
+    display: table-cell;
+    -webkit-animation:logoAanimationUnzip 1s ease normal both ;
+    -moz-animation:logoAanimationUnzip 1s ease normal both ; 
+    animation:logoAanimationUnzip 1s ease normal both ;  
+}
+body #header.menu-default-hide.header-slide-down #header-logo a
+/*.no-touch body.page #header.menu-default-hide:not(.header-slide-down) #header-inn:hover #logo a*/ { 
+  display: block;
+  -webkit-animation:logoAanimationZip 1s ease normal both ; 
+  -moz-animation:logoAanimationZip 1s ease normal both ; 
+  animation:logoAanimationZip 1s ease normal both ; 
+}
+@-webkit-keyframes logoAanimationZip {
+  0%{ line-height: 150px; }
+  50%{ line-height: 8px; }
+  100%{ line-height: 8px; }
+}
+@-moz-keyframes logoAanimationZip {
+  0%{ line-height: 150px; }
+  50%{ line-height: 8px; }
+  100%{ line-height: 8px; }
+}
+@keyframes logoAanimationZip {
+  0%{ line-height: 150px; }
+  50%{ line-height: 8px; }
+  100%{ line-height: 8px; }
+}
+@-webkit-keyframes logoAanimationUnzip {
+  0%{ line-height: 8px; }
+  50%{ line-height: 8px; }
+  100%{ line-height: 150px; }
+}
+@-moz-keyframes logoAanimationUnzip {
+  0%{ line-height: 8px; }
+  50%{ line-height: 8px; }
+  100%{ line-height: 150px; }
+}
+@keyframes logoAanimationUnzip {
+  0%{ line-height: 8px; }
+  50%{ line-height: 8px; }
+  100%{ line-height: 150px; }
+}
+/* Anima: logo img */
+body #header.menu-default-hide #header-logo .logo-image {
+  display: inline-block; max-height: 60px;
+}
+body #header.menu-default-hide.header-slide-down .logo-image
+/*.no-touch body.page #header.menu-default-hide:not(.header-slide-down) #header-inn:hover .logo-image*/ {
+  -webkit-animation:logoImgZip 1s ease normal both ; 
+  -moz-animation:logoImgZip 1s ease normal both ; 
+  animation:logoImgZip 1s ease normal both ; 
+}
+@-webkit-keyframes logoImgZip {
+  0%{ max-height: 60px; }
+  50%{ max-height: 40px; }
+  100%{ max-height: 40px; }
+}
+@-moz-keyframes logoImgZip {
+  0%{ max-height: 60px; }
+  50%{ max-height: 40px; }
+  100%{ max-height: 40px; }
+}
+@keyframes logoImgZip {
+  0%{ max-height: 60px; }
+  50%{ max-height: 40px; }
+  100%{ max-height: 40px; }
+}
+/* Anima : menu search */
+body #header.menu-default-hide #header-inn-main {
+  visibility: hidden; 
+  opacity: 0;
+   -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+body #header.menu-default-hide.header-slide-down #header-inn-main
+/*.no-touch body.page #header.menu-default-hide:not(.header-slide-down) #header-inn:hover #header-inn-main*/ {
+  visibility: visible; opacity: 1;
+  -webkit-transition: all .5s .5s;
+  -moz-transition: all .5s .5s;
+  -ms-transition: all .5s .5s;
+  -o-transition: all .5s .5s;
+  transition: all .5s .5s;
+}
+/* Anima : black bg */
+body #header.menu-default-hide .header-bg {
+  width: 250px; height: 150px; position: absolute; z-index: -1; top: 0; left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-animation:headerBGanimationUnzip 1s ease normal both ; 
+  -moz-animation:headerBGanimationUnzip 1s ease normal both ; 
+  animation:headerBGanimationUnzip 1s ease normal both ; 
+}
+body #header.menu-default-hide .header-bg {
+    background-color: $white;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: headerBGanimationUnzip 1s ease normal both;
+    -moz-animation: headerBGanimationUnzip 1s ease normal both;
+    animation: headerBGanimationUnzip 1s ease normal both;
+}
+body #header.menu-default-hide.header-slide-down .header-bg
+/*.no-touch body.page #header.menu-default-hide:not(.header-slide-down) #header-inn:hover ~ .header-bg*/ {
+  -webkit-animation:headerBGanimationZip 1s ease normal both ; 
+  -moz-animation:headerBGanimationZip 1s ease normal both ; 
+  animation:headerBGanimationZip 1s ease normal both ; 
+}
+@-webkit-keyframes headerBGanimationZip {
+  0%{ height: 150px; width: 250px; }
+  50%{ height: 100px; width: 250px; }
+  100%{ height: 100px; width: 100%; }
+}
+@-moz-keyframes headerBGanimationZip {
+  0%{ height: 150px; width: 250px; }
+  50%{ height: 100px; width: 250px; }
+  100%{ height: 100px; width: 100%; }
+}
+@keyframes headerBGanimationZip {
+  0%{ height: 150px; width: 250px; }
+  50%{ height: 100px; width: 250px; }
+  100%{ height: 100px; width: 100%; }
+}
+@-webkit-keyframes headerBGanimationUnzip {
+  0%{ height: 100px; width: 100%; }
+  50%{ height: 100px; width: 150px; }
+  100%{ height: 150px; width: 150px; }
+}
+@-moz-keyframes headerBGanimationUnzip {
+  0%{ height: 100px; width: 100%; }
+  50%{ height: 100px; width: 250px; }
+  100%{ height: 150px; width: 250px; }
+}
+@keyframes headerBGanimationUnzip {
+  0%{ height: 100px; width: 100%; }
+  50%{ height: 100px; width: 250px; }
+  100%{ height: 150px; width: 250px; }
+}
+
+.hide-logo {
+    opacity: 0;
+    -webkit-animation:logofadeOut 0.5s ease normal both ; 
+    -moz-animation:logofadeOut 0.5s ease normal both ; 
+    animation:logofadeOut 0.5s ease normal both ; 
+}
+.show-logo {
+    opacity: 1!important;
+    -webkit-animation:logofadeIn 1s ease normal both ; 
+    -moz-animation:logofadeIn 1s ease normal both ; 
+    animation:logofadeIn 1s ease normal both ; 
+}
+
+@-webkit-keyframes logofadeIn {
+  0%{ opacity: 0; }
+  50%{ opacity: 0.5; }
+  100%{ opacity: 1; }
+}
+@-moz-keyframes logofadeIn {
+  0%{ opacity: 0; }
+  50%{ opacity: 0.5; }
+  100%{ opacity: 1; }
+}
+@keyframes logofadeIn {
+  0%{ opacity: 0; }
+  50%{ opacity: 0.5; }
+  100%{ opacity: 1; }
+}
+
+@-webkit-keyframes logofadeOut {
+  0%{ opacity: 1; top: 20px;}
+  50%{ opacity: 0.5; top: 0px; }
+  100%{ opacity: 0; top: 0px; }
+}
+@-moz-keyframes logofadeOut {
+  0%{ opacity: 1; top: 20px;}
+  50%{ opacity: 0.5; top: 0; }
+  100%{ opacity: 0; top: 0px; }
+}
+@keyframes logofadeOut {
+  0%{ opacity: 1; top: 20px; }
+  50%{ opacity: 0.5; top: 0; }
+  100%{ opacity: 0; top: 0px; }
+}
+
+@-webkit-keyframes logoTop {
+  0%{ top: 0px;}
+  80%{ top: 0px; }
+  100%{ top: 20px; }
+}
+@-moz-keyframes logoTop {
+  0%{ top: 0px;}
+  80%{  top: 0; }
+  100%{ top: 20px; }
+}
+@keyframes logoTop {
+  0%{  top: 0px; }
+  80%{ top: 0; }
+  100%{ top: 20px; }
 }
