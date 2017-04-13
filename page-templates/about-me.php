@@ -7,7 +7,7 @@ get_header();
 
 <?php echo get_template_part('parts/content', 'banner'); ?>
 
-<section id="content" class="os-animation animated fadeIn">
+<section id="content" class="">
     <?php while (have_posts()) : the_post(); ?>
         <div class="row">
             <div class="alrge-12 columns">

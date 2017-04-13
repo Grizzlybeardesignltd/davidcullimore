@@ -7,7 +7,7 @@ get_header();
 <div id="bg1" data-0="background-position:0px 0px;" data-end="background-position:-100px -800px;"></div>
 <div id="bg2" data-0="background-position:0px 0px;" data-end="background-position:-50px -1800px;"></div>
 <div id="bg3" data-0="background-position:0px 0px;" data-end="background-position:-500px -3000px;"></div>
-<section id="slider" class="pxforward">
+<section id="slider">
     <div class="flexslider">
         <ul class="slides">
             <?php
@@ -43,8 +43,7 @@ get_header();
 <div id="pagewrap">
     <section id="content">
         <?php while (have_posts()) : the_post(); ?>
-            <div class="overlay-bg"></div>
-            <div id="intro" class="row pxforward bg-white">
+            <div id="intro" class="row pxforward">
                 <div class="large-12 columns">
                     <?php the_content(); ?>
                     <div class="wrap">
@@ -55,7 +54,9 @@ get_header();
             </div>
         </section>
         <section id="portfolio">
+            <div class="overlay-bg"></div>
             <div id="weddings" class="row pxforward">
+                <img src="<?php echo get_template_directory_uri();?>/img/svg/Up-triangles.svg" class="img-responsive triangle-absolute"/>
                 <div class="large-8 medium-9 columns image-container">
                     <?php
                     $image1 = get_field('image_1');
@@ -64,14 +65,14 @@ get_header();
                         <img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="large-6 medium-5 columns home-weddings hide-for-medium-up">
+                <div class="medium-6 columns home-weddings show-for-medium-down">
                     <div class="off-centre"></div>
                     <div class="white-bg">
                         <?php the_field('content_1'); ?>
                         <a class="button turquoise-bg" href="<?php echo get_bloginfo('url'); ?>/photography/weddings"><span></span>Portfolio</a><div class="clear"></div>
                     </div>
                 </div>
-                <div class="large-6 medium-5 columns hide-for-medium-down">
+                <div class="large-6 medium-5 columns hide-for-medium-down home-weddings">
                      <main>
 			<section class="content content--c1">
 				<div href="#" class="tilter tilter--1">
@@ -79,11 +80,12 @@ get_header();
 						<figcaption class="tilter__caption">
                                                     <?php the_field('content_1'); ?>
                                                     <a class="button turquoise-bg" href="<?php echo get_bloginfo('url'); ?>/photography/weddings"><span></span>Portfolio</a>
+                                                    <div class="clearfix"></div>
 						</figcaption>
 						
-                                            <svg version="1.1" class="tilter__deco tilter__deco--lines" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                            <!--<svg version="1.1" class="tilter__deco tilter__deco--lines" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="325px" height="231px" viewBox="0 0 325 231" enable-background="new 0 0 325 231" xml:space="preserve">
-<rect x="1" y="1" fill="none" stroke="#F15A29" stroke-width="1" stroke-miterlimit="10" width="323" height="229"/>
+<rect x="1" y="1" fill="none" stroke="#F15A29" stroke-width="1" stroke-miterlimit="10" width="323" height="229"/>-->
 </svg>
 
                                             <div class="off-centre"></div>
@@ -95,6 +97,7 @@ get_header();
             </div>
             <div class="logo-bdr"><span></span></div>
             <div id="family" class="row pxforward">
+                <img src="<?php echo get_template_directory_uri();?>/img/svg/SIDE-triangles.svg" class="img-responsive triangle-absolute"  />
                 <div class="large-8 medium-9 columns image-container">
                     <?php
                     $image2 = get_field('image_2');
@@ -103,14 +106,14 @@ get_header();
                         <img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
                     <?php endif; ?>
                 </div>
-                <div class="large-6 medium-5 columns home-family hide-for-medium-up">
+                <div class="medium-6 columns home-family show-for-medium-down">
                     <div class="off-centre"></div>
                     <div class="white-bg">
                         <?php the_field('content_2'); ?>
                         <a class="button turquoise-bg" href="<?php echo get_bloginfo('url'); ?>/photography/families"><span></span>Portfolio</a><div class="clear"></div>
                     </div>
                 </div>
-                <div class="large-6 medium-5 columns hide-for-medium-down">
+                <div class="large-6 medium-5 columns hide-for-medium-down home-family">
                      <main>
 			<section class="content content--c1">
 				<div href="#" class="tilter tilter--1">
@@ -118,10 +121,11 @@ get_header();
 						<figcaption class="tilter__caption">
                                                     <?php the_field('content_2'); ?>
                                                     <a class="button turquoise-bg" href="<?php echo get_bloginfo('url'); ?>/photography/families"><span></span>Portfolio</a>
+                                                    <div class="clearfix"></div>
 						</figcaption>
 						
-                                            <svg version="1.1" class="tilter__deco tilter__deco--lines" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="325px" height="231px" viewBox="0 0 325 231" enable-background="new 0 0 325 231" xml:space="preserve">
+                                            <!--<svg version="1.1" class="tilter__deco tilter__deco--lines" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="325px" height="231px" viewBox="0 0 325 231" enable-background="new 0 0 325 231" xml:space="preserve">-->
 <rect x="1" y="1" fill="none" stroke="#F15A29" stroke-width="1" stroke-miterlimit="10" width="323" height="229"/>
 </svg>
 
@@ -139,4 +143,6 @@ get_header();
     ?>
     <?php echo get_template_part('parts/content', 'get-in-touch-cta'); ?>
 </div>
+
+
 <?php get_footer(); ?>

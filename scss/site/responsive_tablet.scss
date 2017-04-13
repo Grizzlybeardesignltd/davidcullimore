@@ -23,6 +23,51 @@ A. CUSTOM SETTINGS
 12. HOVER EFFECTS
 13. COMMON STYLE / BORDERS
 */
+/*
+==============================
+STYLES ONLY FOR LARGE SCREEN
+==============================
+*/
+@media screen and (min-width: 64.043em) {
+    .PadLeft30{
+        padding-left:30px;
+    }
+    .PadRight30{
+        padding-right:30px;
+    }
+    /**
+     * 9. BLOG
+     * ----------------------------------------------------------------------------
+     */
+    .blog, .archive, .author, .tag, .term, .taxonomy, .single{
+        figure {
+            &:hover {
+                background: $turquoise;
+                h2 {
+                     -webkit-transform: translate3d(0,0,0);
+                    transform: translate3d(0,0,0);
+                }
+                h2::after, p {
+                    opacity: 1;
+                    -webkit-transform: translate3d(0,0,0);
+                    transform: translate3d(0,0,0);
+                }
+                img {
+                    opacity: 0.9;
+                }
+            }
+        }
+        .small-blog {
+            figure {
+                &:hover {
+                    h2, p {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 64.043em) {
     /**
    * 
@@ -68,6 +113,10 @@ A. CUSTOM SETTINGS
      * 5. FOOTER 
      * ------------------------------------
      */
+    .footer-triangles {
+        bottom: 162px;
+        background-size: contain;
+    }
     footer#footer{
         .footer-wrapper{
             margin-top:-100px;
@@ -95,7 +144,15 @@ A. CUSTOM SETTINGS
 
     /** 7. PAGE SPECIFIC
      * ------------------------------------ */
-
+    .page-template-home {
+        header {
+            &#header {
+                .header-bg {
+                    border-bottom: 5px solid $darkblue;
+                }
+            }
+        }
+    }
     /**
      *  7.1 HOME
      * ------------------------------------
@@ -176,6 +233,49 @@ A. CUSTOM SETTINGS
      *  9. BLOG
      * ------------------------------------
      */
+    .blog, .archive, .author, .tag, .term, .taxonomy, .single {
+        figure {
+            h2 {
+                &:after {
+                    top: 13px;
+                    opacity: 1;
+                }
+            }
+            p {
+                opacity: 1;
+                top: 14px;
+                text-align: center;
+                    
+            }
+            
+            figcaption {
+                text-align: center;
+                position: absolute;
+                top: 40%;
+                height: auto;
+                transform: translateY(-50%);
+            }
+        }
+        .small-blog {
+            figure {
+                h2 {
+                    opacity: 1;
+                    position: absolute;
+                    top: 60%;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    
+                    &:after {
+                        opacity: 0;
+                    }
+                }
+                p {
+                    opacity: 0;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 
     /**
      *  9.1 BLOG SINGLE

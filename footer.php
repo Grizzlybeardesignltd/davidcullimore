@@ -1,6 +1,22 @@
+
+<?php /* if (!is_front_page()): ?>
+
 <footer id="seperator">
-    <img id="svg-footer" src="<?php echo get_template_directory_uri(); ?>/img/svg/footer-bg.svg"/>
+    <img id="svg-footer" src="<?php echo get_template_directory_uri(); ?>/img/svg/footer.svg"/>
 </footer>
+
+<?php else : ?>
+
+<footer id="seperator">
+    <img id="" src="<?php echo get_template_directory_uri(); ?>/img/svg/footer-bg.svg"/>
+</footer>
+
+<?php endif; */?>
+
+<footer id="seperator">
+    <img id="svg-footer" src="<?php echo get_template_directory_uri(); ?>/img/svg/footer.svg"/>
+</footer>
+
 <footer id="footer">
     <div class="row footer-wrapper">
         <div id="footer-logo">
@@ -18,7 +34,16 @@
         </div>
     </div>
 </footer>
-
+<?php 
+/*
+ * End Div for <div id="skrollr-body"> in the header if is home page
+ * Needed for mobile scrolling while having Scrollr
+ */
+    if (is_front_page()): 
+        echo '</div>';
+    endif;
+?>
+</div>
 <?php wp_footer(); ?>
 <script>
     (function ($) {

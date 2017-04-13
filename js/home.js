@@ -244,8 +244,8 @@ jQuery(document).ready(function ($) {
 })();
 
 jQuery('.tilter__caption').each( function(){
-    var tilterH = jQuery( this ).innerHeight();
-    jQuery( this ).parent('.tilter__figure').css( "height", tilterH  )
+    var tilterH = jQuery( this ).innerHeight() - 15;
+    jQuery( this ).parent('.tilter__figure').css( "height", tilterH );
 } )
 
 jQuery(window).scroll(function(){                          
@@ -260,4 +260,7 @@ jQuery(window).scroll(function(){
         jQuery('#logo-text').removeClass('hide-logo');
         jQuery('#logo-text').addClass('topLogo');
     }
-});});
+});
+// PARALLAX
+    
+});

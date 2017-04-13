@@ -65,7 +65,7 @@ class reverie_walker extends Walker_Nav_Menu {
 				$classes[] = 'has-flyout';
                                 $toggle_sub_menu = 'data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"';
                                 $toggle_sub_menu_class = "class=\"dropdown-toggle\" ";
-				$flyout_toggle = '<a href="#" class="flyout-toggle"><span></span></a>';
+				//$flyout_toggle = '<a href="#" class="flyout-toggle"><span></span></a>';
                                 $toggle_li_class = 'dropdown';
                                 $toggle_arrow = '<i class="fa fa-chevron-down" aria-hidden="true"></i>';
 			} else if ( $this->nav_bar['in_top_bar'] == true ) {
@@ -89,7 +89,7 @@ class reverie_walker extends Walker_Nav_Menu {
 		$item_output  = $args->before;
 		$item_output .= '<a '. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after .$toggle_arrow;
-		$item_output .= '<span></span></a>';
+		$item_output .= '</a>';
 		$item_output .= $flyout_toggle; // Add possible flyout toggle
 		$item_output .= $args->after;
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );

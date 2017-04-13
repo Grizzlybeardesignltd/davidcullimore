@@ -2,7 +2,13 @@
 
 /* SLICK */
 jQuery(document).ready(function ($) {
-    $('select').select2();
+    $('select').select2({
+        minimumResultsForSearch: -1
+    });
+    $('#archives-dropdown-3').select2({
+        placeholder: 'Archives',
+        minimumResultsForSearch: -1
+    });
     var $flexslider = $('.flexslider'),
             $slides = $flexslider.find('li'),
             stripComment = function (string) {
@@ -56,29 +62,31 @@ jQuery(document).ready(function ($) {
 
     //SCROLL TO
     jQuery(function() {
-	jQuery('a[href*=#]').on('click', function(e) {
+	jQuery('a.scrollDown').on('click', function(e) {
+		e.preventDefault();
+		jQuery('html, body').animate({ scrollTop: jQuery(jQuery(this).attr('href')).offset().top - 200}, 500, 'linear');
+	});
+    });
+    jQuery(function() {
+	jQuery('a.mouse').on('click', function(e) {
 		e.preventDefault();
 		jQuery('html, body').animate({ scrollTop: jQuery(jQuery(this).attr('href')).offset().top - 200}, 500, 'linear');
 	});
     });
     
-    //BOOTSTRAP MENU 
-    jQuery(function() {
-	jQuery('.dropdown').each( function(){
-            jQuery( this ).hover(function(){
-                jQuery( this ).addClass('open');
-            })
-        } )
-    });
+    jQuery(document).ready(function($) {
     
-    // PARALLAX
-    var s = skrollr.init({
-		edgeStrategy: 'set',
-		easing: {
-			WTF: Math.random,
-			inverted: function(p) {
-				return 1-p;
-			}
-		}
-	});
+    // Add slideDown animation to Bootstrap dropdown when expanding.
+  jQuery('.dropdown').on('show.bs.dropdown', function() {
+    jQuery(this).find('.dropdown-menu').first().stop(true, true).slideDown('fast');
+  });
+
+  // Add slideUp animation to Bootstrap dropdown when collapsing.
+  jQuery('.dropdown').on('hide.bs.dropdown', function() {
+    jQuery(this).find('.dropdown-menu').first().stop(true, true).slideUp('fast');
+  });
+});
+    
+    
+    
 });

@@ -1,15 +1,12 @@
-<section id="slider" class="pxforward">
+<section id="slider" >
     <?php 
 
     $image = get_field('banner_image');
 
     if( !empty($image) ): ?>
 
-        <div class="banner" style="background-image: url('<?php echo $image['url']; ?>');">
-            <a href="#intro" class="scrollDown">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="banner flexslider" style="background-image: url('<?php echo $image['url']; ?>');">
+            <a href="#content" class="mouse">
             </a>
         </div>
         <div class="svg-cont">

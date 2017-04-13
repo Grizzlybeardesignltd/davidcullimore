@@ -82,8 +82,8 @@ function reverie_comments($comment, $args, $depth) {
                         <p><?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'reverie'), get_option('siteurl'), $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php __('Log out of this account', 'reverie'); ?>"><?php _e('Log out &raquo;', 'reverie'); ?></a></p>
                         <textarea name="comment" id="comment" placeholder="<?php _e('Your message here...', 'reverie'); ?>" tabindex="4"></textarea>
                     <?php else : ?>
-                        <div class="row">
-                            <div class="large-7 columns">
+                        <div class="row" data-equalizer>
+                            <div class="medium-6 columns" data-equalizer-watch>
                                 <input type="text" class="five" name="author" id="author" placeholder="<?php
                                 _e('Name', 'reverie');
                                 if ($req)
@@ -96,7 +96,7 @@ function reverie_comments($comment, $args, $depth) {
                                 ?>" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?>>
                                 <input type="text" class="five" placeholder="<?php _e('Website', 'reverie'); ?>" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3">
                             </div>
-                            <div class="large-5 columns">
+                            <div class="medium-6 columns" data-equalizer-watch>
                                 <textarea name="comment" id="comment" placeholder="<?php _e('Your message here...', 'reverie'); ?>" tabindex="4"></textarea>
                             </div>
                         </div>
@@ -104,7 +104,10 @@ function reverie_comments($comment, $args, $depth) {
                     <div class="button-wrapper">
                         <div class="button-outer">                           
                             <div class="button-inner">
-                                <input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment">
+                                <button name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" class="submit">
+                                    Submit Comment
+                                    <span></span>
+                                </button>
                             </div>
                         </div>
                     </div>

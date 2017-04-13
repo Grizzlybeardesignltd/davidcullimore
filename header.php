@@ -27,7 +27,7 @@
         <meta name="msapplication-square310x310logo" content="<?php echo get_template_directory_uri(); ?>/img/icons/largetile.png" />
         <?php wp_head(); ?>
     </head>   
-    <body <?php body_class('antialiased'); ?>>
+    <body <?php body_class('antialiased '); ?>>
         <?php if (is_front_page() ) {
             $class = 'menu-default-hide';
         }?>
@@ -39,17 +39,27 @@
                         <div class="hide-for-medium-down">
                             <div id="header-logo">
                                 <a href='<?php echo get_bloginfo('url'); ?>'>
-                                    <img id="logo-triangle" src='<?php echo get_template_directory_uri(); ?>/img/svg/logo.svg' alt="David Cullimore Photography">
-                                    <img id="logo-text" src='<?php echo get_template_directory_uri(); ?>/img/svg/logo-text.svg' alt="David Cullimore Photography">
+                                    <?php if (is_front_page()): ?>
+                                    <div class="dc-log-anim">
+                                        <div class="dc-trangle"></div>
+                                        <div class="dc-david">
+                                            <span class="dc-d"></span>
+                                            <span class="dc-avid"></span>
+                                        </div>
+                                        <div class="dc-cullimore">
+                                            <span class="dc-c"></span>
+                                            <span class="dc-ullimore"></span>
+                                        </div>
+                                        <div class="dc-photography"></div>
+                                    </div>
+                                    <?php else: ?>
+                                        <img id="logo-triangle" src='<?php echo get_template_directory_uri(); ?>/img/svg/logo.svg' alt="David Cullimore Photography">
+                                    <?php endif; ?>
                                 </a>
                             </div>
                             <div id="header-inn-main">
                             <?php
-                            wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu', 'walker' => new reverie_walker(array(
-                                    'in_top_bar' => false,
-                                    'item_type' => 'li',
-                                    'menu_type' => 'main-menu'
-                                        )),));
+                            wp_nav_menu(array('theme_location' => 'primary', 'menu_class' => 'nav-menu'));
                             ?>
                             </div>
                         </div>
@@ -86,3 +96,11 @@
             <div class="header-bg"></div>
             <!-- End of Top-Bar -->
         </header>
+        <?php 
+        /*
+         * Add Div ID for mobile Scrolr
+         */
+            if (is_front_page()): 
+                echo '<div id="skrollr-body">';
+            endif;
+        ?>
