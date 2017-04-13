@@ -53,8 +53,8 @@ html[xmlns] .slides {display: block;}
 
 /* FlexSlider Default Theme
 *********************************/
-.linesl{position:absolute; left:0; height:100%; background:url("../img/background_prev.png") repeat-y left top; width:45px;}
-.linesr{position:absolute; right:0; height:100%; background:url("../img/background_prev.png") repeat-y right top; width:45px;}
+.linesl{position:absolute; left:0; height:100%; width:45px;}
+.linesr{position:absolute; right:0; height:100%; width:45px;}
 .flexslider { margin: 0 auto; background:#fff; position: relative; zoom: 1; width:100%; text-align: center; padding:0;}
 .page-child .flexslider {margin-bottom:0px;}
 .flex-viewport { max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }

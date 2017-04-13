@@ -30,6 +30,7 @@
 }
 body {
     font-family: 'Gotham-Book', Arial, sans-serif;    
+    background: transparent;
     font-size: 100%;
     color:$grey;
 }
@@ -62,6 +63,9 @@ p a:hover{
 }
 a:hover {
     text-decoration: none;
+}
+a.button {
+    padding: 20px 25px;
 }
 p {
     color:$darkblue;

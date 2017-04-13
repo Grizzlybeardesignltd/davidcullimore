@@ -38,6 +38,7 @@ html, body {
 }
 body {
     overflow-y: hidden;
+    background: transparent;
 }
 img {
     max-width: 100%;
@@ -70,15 +71,11 @@ img {
     -vendor-animation-delay: 2s;
     -vendor-animation-iteration-count: infinite;
 }
-.PadLeft30{
-    padding-left:30px;
-}
+
 .PadRight200{
     padding-right:200px;
 }
-.PadRight30{
-    padding-right:30px;
-}
+
 a.button{
     display:block;
     font-family:'Gotham-Book';
@@ -102,6 +99,17 @@ a.button{
 a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
     background:$orange;
 }
+.pxforward {
+    padding: 50px 0 0;
+    position: relative;
+    z-index: 99;
+}
+.bg-white {
+    background: $white;
+}
+.margTop90 {
+    margin-top:  90px;
+}
 /**
  * 1. TYPOGRAPHY
  * ----------------------------------------------------------------------------
@@ -111,6 +119,12 @@ a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
  * 2. HEADER
  * ----------------------------------------------------------------------------
  */
+.banner {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
 
 /**
  * 3. NAVIGATION
@@ -121,6 +135,165 @@ a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
  * 4. SLIDERS
  * ----------------------------------------------------------------------------
  */
+#slider {
+    position: relative;
+    .svg-cont {
+        position: absolute;
+        width: 100%;
+        z-index: 9;
+        bottom: -3px;
+    }
+    .flexslider {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        .slides {
+            height: 100vh;
+            li {
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+        a.scrollDown {
+            padding-top: 80px;
+            position: absolute;
+            z-index: 999;
+            display: inline-block;
+            transition: all 0.5s ease-in-out 0s;
+            bottom: 20px;
+            
+            span {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 24px;
+                height: 24px;
+                margin-left: -12px;
+                border-left: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                -webkit-animation: sdb07 2s infinite;
+                animation: sdb07 2s infinite;
+                opacity: 0;
+                box-sizing: border-box;
+                
+                &:nth-of-type(1) {
+                    -webkit-animation-delay: 0s;
+                    animation-delay: 0s;
+                }
+                &:nth-of-type(2) {
+                    -webkit-animation-delay: .15s;
+                    animation-delay: .15s;
+                    top: 16px;
+                }
+                &:nth-of-type(3) {
+                    -webkit-animation-delay: .3s;
+                    animation-delay: .3s;
+                    top: 32px;
+                }
+            }
+            &:hover {
+                span {
+                    &:nth-of-type(1) {
+                        border-color: $orange;
+                    }
+                    &:nth-of-type(2) {
+                        border-color: $turquoise;
+                    }
+                    &:nth-of-type(3) {
+                        border-color: $darkblue;
+                    }
+                }
+            }
+            
+        }
+        .mouse {
+            display: inline-block;
+            vertical-align: middle;
+            width: 22px;
+            height: 36px;
+            display: inline-block;
+            z-index: 99;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+            position: absolute;
+            border: 2px solid $white;
+            border-radius: 12px;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 2px;
+              height: 10px;
+              position: absolute;
+              top: 5px;
+              left: 8px;
+              background-color: $white;
+              animation: mouse-animation 2.75s ease-in-out infinite;
+            }
+          }
+
+          @keyframes mouse-animation {
+                  0% {
+            transform: scale(1,0);
+            transform-origin: 50% 0;
+                  }
+                  20%, 80% {
+            transform: scale(1,1);
+                  }
+            81% {
+            transform-origin: 50% 100%;  
+            }
+                  100% {
+            transform: scale(1,0);
+            transform-origin: 50% 100%; 
+                  }
+          }
+        @-webkit-keyframes sdb07 {
+                0% {
+                        opacity: 0;
+                }
+                50% {
+                        opacity: 1;
+                }
+                100% {
+                        opacity: 0;
+                }
+        }
+        @keyframes sdb07 {
+                0% {
+                        opacity: 0;
+                }
+                50% {
+                        opacity: 1;
+                }
+                100% {
+                        opacity: 0;
+                }
+        }
+
+    }
+    .flex-direction-nav a {
+        height: 30px;
+        z-index: 999;
+    }
+    .flex-direction-nav .flex-prev {
+        border-bottom: 25px solid transparent;
+        border-right: 45px solid $darkblue;
+        border-top: 25px solid transparent;
+        left: -10%;
+    }
+    .flex-direction-nav .flex-next {
+        border-bottom: 25px solid transparent;
+        border-left: 45px solid $darkblue;
+        border-top: 25px solid transparent;
+        right: -10%;
+    }
+}
 
 /**
  * 5. FOOTER 
@@ -184,7 +357,7 @@ a.button:hover, button:hover, button:focus, .button:hover, .button:focus{
 
 #cta{
     position:relative;
-    margin:100px 0;
+    margin:100px 0 27px;
     #cta-wrap{
         background:$turquoise;
         text-align:center;
@@ -451,3 +624,372 @@ figure.effect-framed:hover figcaption h2 {
  * 13. COMMON STYLE / BORDERS
  * ------------------------------------
 */
+
+.logo-anim {
+    height: 150px;
+    width: 300px;
+    position: relative;
+    display: block;
+    //background: url('../img/logo-anim.png') cover no-repeat center 0;
+    background-position: 0px 0px;
+    transform: scale(0.75, 0.75);
+    animation: logoAnimScale 2s ease-in-out forwards;
+    -moz-animation: logoAnimScale 2s ease-in-out forwards;
+    -webkit-animation: logoAnimScale 2s ease-in-out forwards;
+    -ms-animation: logoAnimScale 2s ease-in-out forwards;
+    -o-animation: logoAnimScale 2s ease-in-out forwards;
+    
+    
+    .triangle-logo {
+        background: url('../img/svg/logo.svg') no-repeat;
+        height: 80px;
+        width: 90px;
+        display: block;
+        position: absolute;
+        opacity: 0;
+        background-position: 0 0;
+    }
+    
+    .david {
+        background: url('../img/svg/logo-text.svg') no-repeat;
+        height: 40px;
+        width: 100%;
+        display: block;
+        position: absolute;
+        background-size: cover;
+        background-position: 0 0;
+    }
+    .cullimore {
+        background: url('../img/svg/logo-text.svg') no-repeat;
+        height: 40px;
+        width: 100%;
+        display: block;
+        top: 50px;
+        position: absolute;
+        background-size: cover;
+        background-position: 0px 65%;
+    }
+    .photography {
+        background: url('../img/svg/logo-text.svg') no-repeat;
+        height: 8%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 106px;
+        background-size: cover;
+        background-position: center 100%;
+    }
+}
+.header-slide-down {
+    .logo-anim {
+        animation: logoAnim 2s ease-in-out forwards;
+        -moz-animation: logoAnim 2s ease-in-out forwards;
+        -webkit-animation: logoAnim 2s ease-in-out forwards;
+        -ms-animation: logoAnim 2s ease-in-out forwards;
+        -o-animation: logoAnim 2s ease-in-out forwards;
+            
+            
+        .triangle-logo {
+            animation: animatedBackground 2s ease-in-out forwards;
+            -moz-animation: animatedBackground 2s ease-in-out forwards;
+            -webkit-animation: animatedBackground 2s ease-in-out forwards;
+            -ms-animation: animatedBackground 2s ease-in-out forwards;
+            -o-animation: animatedBackground 2s ease-in-out forwards;
+        }
+        .david {
+            animation: hideDavid 2s ease-in-out forwards;
+            -moz-animation: hideDavid 2s ease-in-out forwards;
+            -webkit-animation: hideDavid 2s ease-in-out forwards;
+            -ms-animation: hideDavid 2s ease-in-out forwards;
+            -o-animation: hideDavid 2s ease-in-out forwards;
+        }
+        .cullimore {
+            animation: hideCullimore 2s ease-in-out forwards;
+            -moz-animation: hideCullimore 2s ease-in-out forwards;
+            -webkit-animation: hideCullimore 2s ease-in-out forwards;
+            -ms-animation: hideCullimore 2s ease-in-out forwards;
+            -o-animation: hideCullimore 2s ease-in-out forwards;
+        }
+        .photography {
+            animation: hidePhotography 2s ease-in-out forwards;
+            -moz-animation: hidePhotography 2s ease-in-out forwards;
+            -webkit-animation: hidePhotography 2s ease-in-out forwards;
+            -ms-animation: hidePhotography 2s ease-in-out forwards;
+            -o-animation: hidePhotography 2s ease-in-out forwards;
+        }
+    }
+}
+@keyframes logoAnimScale {
+     0% { 
+         transform: scale(0.1, 0.1);
+     }
+
+    50% { 
+        transform: scale(0.75, 0.75);
+    }
+    75% {
+        transform: scale(0.75, 0.75);
+    }
+    100% { 
+        transform: scale(0.75, 0.75);
+    }
+}
+@keyframes logoAnim {
+     0% { 
+
+     }
+
+    50% { 
+        height: 150px;
+    }
+    75% {
+        height: 24px;
+    }
+    100% { 
+        height: 24px;
+    }
+}
+@keyframes hideDavid {
+     0% { 
+         top: 0px;
+         -webkit-clip-path: polygon(0 0, 77% 0, 77% 100%, 0 100%);
+        clip-path: polygon(0 0, 77% 0, 77% 100%, 0 100%);
+        left: 0;
+     }
+
+    25% { 
+        top: 0px;
+        -webkit-clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%);
+        clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%);
+        left: -70px;
+        transform: scale(1, 1);
+    }
+    50% {
+        top: 48px;
+        left: -70px;
+        opacity: 1;
+        transform: scale(0.75, 0.75);
+    }
+    100% { 
+        left: -70px;
+        top: 48px;
+        -webkit-clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%);
+        clip-path: polygon(0 0, 35% 0, 35% 100%, 0 100%);
+        transform: scale(0.75, 0.75);
+        opacity: 0;
+    }
+}
+@keyframes hideCullimore {
+     0% { 
+         left: 0%;
+         top: 50px;
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+     }
+
+    25% { 
+        left: 7%;
+        -webkit-clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
+        clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
+        transform: scale(1, 1);
+        top: 48px;
+    }
+    50% {
+        left: 13px;
+        top: 48px;
+        background-size: 99%;
+        opacity: 1;
+        transform: scale(0.75, 0.75);
+    }
+    100% { 
+        left: 13px;
+        top: 48px;
+        background-size: 99%;
+        -webkit-clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
+        clip-path: polygon(0 0, 10% 0, 10% 100%, 0 100%);
+        transform: scale(0.75, 0.75);
+        opacity: 0;
+    }
+}
+@keyframes hidePhotography {
+     0% { 
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+     }
+
+    25% { 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    100% { 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
+@keyframes animatedBackground {
+     50% {
+         opacity: 0; 
+     }
+    100% { 
+        opacity: 1; 
+    }
+}
+.dc-log-anim {
+    transform: scale(0.75, 0.75);
+    height: 116px;
+    width: 265px;
+    position: relative;
+    animation: logoAnimScale 2s ease-in-out forwards;
+    -moz-animation: logoAnimScale 2s ease-in-out forwards;
+    -webkit-animation: logoAnimScale 2s ease-in-out forwards;
+    -ms-animation: logoAnimScale 2s ease-in-out forwards;
+    -o-animation: logoAnimScale 2s ease-in-out forwards;
+    
+    .dc-trangle {
+        background: url('../img/svg/logo.svg') no-repeat;
+        width: 91px;
+        height: 84px;
+        opacity: 0;
+    }
+    .dc-cullimore, .dc-david, .dc-photography {
+        position: absolute;
+    }
+    .dc-david {
+        left: 22%;
+        top: 0px;
+        .dc-d {
+            background: url('../img/svg/logo-text.svg') no-repeat;
+            width: 35px;
+            height: 27px;
+            float: left;
+            display: block;
+            background-position: -57px 0;
+        }
+        .dc-avid {
+            background: url('../img/svg/logo-text.svg') no-repeat;
+            width: 111px;
+            display: block;
+            background-position: -91px 0;
+            margin-left: 35px;
+            height: 27px;
+        }
+    }
+    .dc-cullimore {
+        top: 53px;
+        
+        .dc-c {
+            background: url('../img/svg/logo-text.svg') no-repeat;
+            width: 32px;
+            height: 29px;
+            float: left;
+            display: block;
+            background-position: 0px -45px;
+        }
+        .dc-ullimore {
+            background: url('../img/svg/logo-text.svg') no-repeat;
+            width: 230px;
+            display: block;
+            background-position: -31px -44px;
+            margin-left: 35px;
+            height: 29px;
+            
+        }
+    }
+    .dc-photography {
+        background: url('../img/svg/logo-text.svg') no-repeat;
+        width: 116px;
+        top: 90%;
+        left: 28%;
+        display: block;
+        height: 17px;
+        background-position: -70px -90px;
+        
+    }
+}
+.header-slide-down {
+    .dc-log-anim {
+        animation: testanim 2s ease-in-out forwards;
+        -moz-animation: testanim 2s ease-in-out forwards;
+        -webkit-animation: testanim 2s ease-in-out forwards;
+        -ms-animation: testanim 2s ease-in-out forwards;
+        -o-animation: testanim 2s ease-in-out forwards;
+        .dc-trangle {
+            animation: displayDcTriangle 2s ease-in-out forwards;
+            -moz-animation: displayDcTriangle 2s ease-in-out forwards;
+            -webkit-animation: displayDcTriangle 2s ease-in-out forwards;
+            -ms-animation: displayDcTriangle 2s ease-in-out forwards;
+            -o-animation: displayDcTriangle 2s ease-in-out forwards;
+        }
+        .dc-david {
+            animation: moveD 2s ease-in-out forwards;
+            -moz-animation: moveD 2s ease-in-out forwards;
+            -webkit-animation: moveD 2s ease-in-out forwards;
+            -ms-animation: moveD 2s ease-in-out forwards;
+            -o-animation: moveD 2s ease-in-out forwards;
+            .dc-avid {
+                animation: hideAvidLetters 2s ease-in-out forwards;
+                -moz-animation: hideAvidLetters 2s ease-in-out forwards;
+                -webkit-animation: hideAvidLetters 2s ease-in-out forwards;
+                -ms-animation: hideAvidLetters 2s ease-in-out forwards;
+                -o-animation: hideAvidLetters 2s ease-in-out forwards;
+            }
+        }
+        .dc-cullimore {
+            animation: moveC 2s ease-in-out forwards;
+            -moz-animation: moveC 2s ease-in-out forwards;
+            -webkit-animation: moveC 2s ease-in-out forwards;
+            -ms-animation: moveC 2s ease-in-out forwards;
+            -o-animation: moveC 2s ease-in-out forwards;
+            .dc-ullimore {
+                animation: hideUlimoreLetters 2s ease-in-out forwards;
+                -moz-animation: hideUlimoreLetters 2s ease-in-out forwards;
+                -webkit-animation: hideUlimoreLetters 2s ease-in-out forwards;
+                -ms-animation: hideUlimoreLetters 2s ease-in-out forwards;
+                -o-animation: hideUlimoreLetters 2s ease-in-out forwards;
+            }
+        }
+        .dc-photography {
+            animation: hideDcPhotography 2s ease-in-out forwards;
+            -moz-animation: hideDcPhotography 2s ease-in-out forwards;
+            -webkit-animation: hideDcPhotography 2s ease-in-out forwards;
+            -ms-animation: hideDcPhotography 2s ease-in-out forwards;
+            -o-animation: hideDcPhotography 2s ease-in-out forwards;
+        }
+    }
+}
+@keyframes testanim {
+     0%  { opacity: 1; height: 116px;}
+   100%  { opacity: 1; height: 28px; width: 225px;}
+}
+@keyframes hideUlimoreLetters {
+     0%  { width: 230px; }
+    25%  { width: 0px; }
+    100% { width: 0px;}
+}
+@keyframes hideAvidLetters {
+     0%  { width: 111px; }
+    25%  { width: 0px; }
+    100% { width: 0px;}
+}
+@keyframes hideDcPhotography {
+     0%  { height: 17px; }
+    25%  { height: 0px; }
+    100% { height: 0px;}
+}
+@keyframes moveD {
+     0%  { left: 22%; top: 0; transform: scale(1);}
+    25%  { left: 22%; top: 0; transform: scale(1);}
+    50%  { left: 15px; top: 50px; transform: scale(0.85); opacity: 1;}
+    100% { left: 15px; top: 50px; transform: scale(0.85); opacity: 0;}
+}
+@keyframes moveC {
+     0%  { left: 0; top: 53px; transform: scale(1);}
+    25%  { left: 0; top: 53px; transform: scale(1);}
+    50%  { left: 49px; top: 50px; transform: scale(0.85); opacity: 1;}
+    100% { left: 49px; top: 50px; transform: scale(0.85); opacity: 0;}
+}
+@keyframes displayDcTriangle {
+     0%  { opacity: 0; }
+    50%  { opacity: 0; }
+    100% { opacity: 1;}
+}

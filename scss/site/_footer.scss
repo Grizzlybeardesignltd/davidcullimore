@@ -1,6 +1,25 @@
+.footer-triangles {
+    //background: url('../img/svg/footer-triangles.svg') no-repeat center bottom;
+   // background-size: contain;
+    position: absolute;
+    bottom: 102px;
+    //height: 27%;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
 footer#seperator{
     margin-right:-5px;
     background:$white;
+    
+    img {
+        width: 100%;
+    }
+    #svg-footer {
+        margin-top: -17%;
+    }
 }
 footer#footer{
     position:relative;

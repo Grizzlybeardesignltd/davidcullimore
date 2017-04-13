@@ -122,7 +122,18 @@ A. CUSTOM SETTINGS
      *  7.2 ABOUT ME
      * ------------------------------------
      */
-
+    .page-template-about-me {
+        #content {
+            h1 {
+                margin-bottom: 50px;
+            }
+            h2 {
+                transform: rotate(0);
+                margin-top: 0;
+                text-align: center;
+            }
+        }
+    } 
     /**
      *  7.3 PHOTOGRAPHY
      * ------------------------------------
@@ -132,6 +143,16 @@ A. CUSTOM SETTINGS
      *  7.4 INVESTMENT
      * ------------------------------------
      */
+    .page-template-investment  {
+        #content {
+            padding: 0;
+            .rightCenter {
+                h1, p {
+                    text-align: center;
+                }
+            }
+        }
+    }
 
     /**
      *  7.5 GIF BOOTH
@@ -175,6 +196,17 @@ A. CUSTOM SETTINGS
      *  9.1 BLOG SINGLE
      * ------------------------------------
      */
+    
+    .blog {
+        .small-blog {
+            figure {
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
 
     /**
      *  9.2 BLOG ARCHIVE
